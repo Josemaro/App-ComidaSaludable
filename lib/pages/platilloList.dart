@@ -25,7 +25,7 @@ class Platillo_Page extends StatelessWidget {
       ),
       body:
       _crearListado(),
-      floatingActionButton: _cargarInterfazUsuario(context),
+      //floatingActionButton: _cargarInterfazUsuario(context),
     );
   }
 
@@ -67,7 +67,6 @@ class Platillo_Page extends StatelessWidget {
       child: Card(
         child: Column(
           children: <Widget>[
-
             ListTile(
               title: Text('${ platillo.nombre }'),
               subtitle: Text(platillo.calorias),
