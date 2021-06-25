@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:instructivoflut4/bloc/provider.dart';
 
 import '../bloc/login_bloc.dart';
+import 'mprincipal.dart';
 
 
 class Login_Page extends StatelessWidget{
@@ -95,7 +96,10 @@ class Login_Page extends StatelessWidget{
 _login(Login_Bloc bloc, BuildContext context){
   print(bloc.correo);
   print(bloc.clave);
-  Navigator.pushReplacementNamed(context, 'home');
+  Navigator.push(context,
+    //MaterialPageRoute(builder: (context) => FirstRoute()),
+    MaterialPageRoute(builder: (context) => MPrincipal()),
+  );
 }
 
   Widget _objetoClave(Login_Bloc bloc){

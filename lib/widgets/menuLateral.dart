@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:instructivoflut4/pages/home.dart';
 import 'package:instructivoflut4/pages/mprincipal.dart';
 
 import 'package:instructivoflut4/pages/platilloList.dart';
@@ -56,6 +57,17 @@ class _MenuLateralState extends State<MenuLateral> {
                   context,
                   //MaterialPageRoute(builder: (context) => FirstRoute()),
                   MaterialPageRoute(builder: (context) => MPrincipal()),
+                );
+              },
+            ),
+            Divider(),
+            new ListTile(
+              title: Text("NuevoMenu", style: TextStyle(color: Colors.white)),
+              onTap: (){
+                Navigator.push(
+                  context,
+                  //MaterialPageRoute(builder: (context) => FirstRoute()),
+                  MaterialPageRoute(builder: (context) => Home_Page()),
                 );
               },
             ),

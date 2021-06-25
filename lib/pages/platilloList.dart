@@ -19,8 +19,10 @@ class Platillo_Page extends StatelessWidget {
     final bloc = Provider.of(context);
 
     return Scaffold(
+
       appBar: AppBar(
         backgroundColor: Colors.redAccent,
+
         title: Text('Lista de Platillos'),
       ),
       body:

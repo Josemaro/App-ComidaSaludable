@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:instructivoflut4/models/UsuarioModel.dart';
 import 'package:instructivoflut4/pages/platilloList.dart';
 import 'package:instructivoflut4/providers/UsuarioProvider.dart';
+import 'package:instructivoflut4/widgets/detalleUsuario.dart';
 import 'package:instructivoflut4/widgets/menuLateral.dart';
 
 import '../bloc/provider.dart';
@@ -17,7 +18,7 @@ class Home_Page extends StatelessWidget{
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.redAccent,
-        title: Text('Home_page'),
+        title: Text('Crear Usuarios'),
       ),
       drawer: MenuLateral(),
       body:
@@ -71,7 +72,13 @@ Widget _crearItem(BuildContext context, Usuario usuario){
           ListTile(
             title: Text('${ usuario.nombres }'),
             subtitle: Text( usuario.email),
-            onTap: () => Navigator.pushNamed(context, 'usuario',arguments: usuario),
+            onTap: () {
+              Navigator.push(
+                context,
+                //MaterialPageRoute(builder: (context) => FirstRoute()),
+                MaterialPageRoute(builder: (context) => DetalleUsuario(usuario)),
+              );
+            },
           ),
 
         ],
