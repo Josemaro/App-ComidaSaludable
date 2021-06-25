@@ -27,6 +27,7 @@ class _Usuario_PageState extends State<Usuario_Page> {
     return Scaffold(
         key: scaffoldKey,
         appBar: AppBar(
+          backgroundColor: Colors.redAccent,
           title: Text('Usuario'),
         ),
         body: SingleChildScrollView(
@@ -41,6 +42,7 @@ class _Usuario_PageState extends State<Usuario_Page> {
                   _crearApellidoM(),
                   _crearEmail(),
                   //_crearFechaNac(),
+                  _crearPassword(),
                   _crearBoton()
                 ],
               ),
@@ -113,6 +115,22 @@ class _Usuario_PageState extends State<Usuario_Page> {
       },
     );
   }
+
+  Widget _crearPassword() {
+    return TextFormField(
+      initialValue: usuario.password,
+      textCapitalization: TextCapitalization.sentences,
+      decoration: InputDecoration(labelText: 'Contraseña'),
+      onSaved: (value)=> usuario.password = value,
+      validator: (value){
+        if(value.length<3){
+          return 'Ingrese una contraseña';
+        }else{
+          return null;
+        }
+      },
+    );
+  }
   /*
   Widget _crearFechaNac() {
     final format = DateFormat("yyyy-MM-dd");
@@ -138,7 +156,7 @@ class _Usuario_PageState extends State<Usuario_Page> {
   Widget  _crearBoton(){
     return RaisedButton.icon(
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
-      color: Colors.deepPurple,
+      color: Colors.redAccent,
       textColor: Colors.white,
       label: Text('Guardar'),
       icon: Icon(Icons.save),

@@ -12,7 +12,6 @@ class Login_Page extends StatelessWidget{
        children: <Widget>[
          _apertura_fondo(context),
          _loginForm(context)
-
        ],
      ),
     );
@@ -85,7 +84,7 @@ class Login_Page extends StatelessWidget{
           ),
 
       elevation: 1,
-      color: Colors.deepPurple,
+      color: Colors.redAccent,
       textColor: Colors.white,
       onPressed: snapshot.hasData?()=>_login(bloc, context):null,
           );
@@ -155,8 +154,8 @@ _login(Login_Bloc bloc, BuildContext context){
       decoration: BoxDecoration(
         gradient: LinearGradient(
           colors: <Color>[
-            Color.fromRGBO(60, 60, 150, 1.0),
-            Color.fromRGBO(90, 70, 170, 1.0),
+            Color.fromRGBO(90, 10, 55, 1.0),
+            Color.fromRGBO(153, 11, 11, 1.0),
           ]
         )
       ),

@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:instructivoflut4/models/UsuarioModel.dart';
+import 'package:instructivoflut4/pages/platilloList.dart';
 import 'package:instructivoflut4/providers/UsuarioProvider.dart';
+import 'package:instructivoflut4/widgets/menuLateral.dart';
 
 import '../bloc/provider.dart';
-import '../models/EmpleadoModel.dart';
-import '../models/EmpleadoModel.dart';
-import '../providers/EmpleadoProvider.dart';
+
 
 class Home_Page extends StatelessWidget{
-  final empleadoProvider = new EmpleadoProvider();
+
   final usuarioProvider = new UsuarioProvider();
   @override
   Widget build(BuildContext context){
@@ -16,11 +16,14 @@ class Home_Page extends StatelessWidget{
 
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.redAccent,
         title: Text('Home_page'),
       ),
+      drawer: MenuLateral(),
       body:
           _crearListado(),
-          floatingActionButton:  _cargarInterfazUsuario(context),
+      floatingActionButton:  _cargarInterfazUsuario(context),
+
     );
   }
 
@@ -28,7 +31,7 @@ class Home_Page extends StatelessWidget{
 
     return FloatingActionButton(
       child: Icon(Icons.add),
-      backgroundColor: Colors.deepPurple,
+      backgroundColor: Colors.redAccent,
       onPressed: () => Navigator.pushNamed(context, 'usuario'),
     );
   }
@@ -57,7 +60,7 @@ Widget _crearItem(BuildContext context, Usuario usuario){
   return Dismissible(
       key: UniqueKey(),
       background: Container(
-        color: Colors.red,
+        color: Colors.deepPurple,
       ),
       onDismissed: (x){
       },
@@ -70,6 +73,7 @@ Widget _crearItem(BuildContext context, Usuario usuario){
             subtitle: Text( usuario.email),
             onTap: () => Navigator.pushNamed(context, 'usuario',arguments: usuario),
           ),
+
         ],
       ),
     ),

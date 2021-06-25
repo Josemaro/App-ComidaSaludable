@@ -32,6 +32,7 @@ class UsuarioProvider{
       "apellido_paterno": usuario.apellidoPaterno,
       "apellido_materno": usuario.apellidoMaterno,
       "email": usuario.email,
+      "password": usuario.password,
       //"fecha_nac": usuario.fechaNac
     };
     print(data.toString());

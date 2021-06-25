@@ -4,12 +4,12 @@
 
 import 'dart:convert';
 
-Welcome welcomeFromJson(String str) => Welcome.fromJson(json.decode(str));
+Platillo welcomeFromJson(String str) => Platillo.fromJson(json.decode(str));
 
-String welcomeToJson(Welcome data) => json.encode(data.toJson());
+String welcomeToJson(Platillo data) => json.encode(data.toJson());
 
-class Welcome {
-  Welcome({
+class Platillo {
+  Platillo({
     this.id,
     this.nombre,
     this.tiempoP,
@@ -43,7 +43,7 @@ class Welcome {
   String sodio;
   String img;
 
-  factory Welcome.fromJson(Map<String, dynamic> json) => Welcome(
+  factory Platillo.fromJson(Map<String, dynamic> json) => Platillo(
     id: json["id"],
     nombre: json["nombre"],
     tiempoP: json["tiempo_p"],

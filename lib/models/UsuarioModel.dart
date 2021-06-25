@@ -15,6 +15,7 @@ class Usuario {
     this.apellidoPaterno,
     this.apellidoMaterno,
     this.email,
+    this.password,
     //this.fechaNac,
   });
 
@@ -23,6 +24,7 @@ class Usuario {
   String apellidoPaterno;
   String apellidoMaterno;
   String email;
+  String password;
   //DateTime fechaNac;
 
   factory Usuario.fromJson(Map<String, dynamic> json) => Usuario(
@@ -31,6 +33,7 @@ class Usuario {
     apellidoPaterno: json["apellido_paterno"],
     apellidoMaterno: json["apellido_materno"],
     email: json["email"],
+    password: json["password"]
     //fechaNac: DateTime.parse(json["fecha_nac"]),
   );
 
@@ -40,6 +43,7 @@ class Usuario {
     "apellido_paterno": apellidoPaterno,
     "apellido_materno": apellidoMaterno,
     "email": email,
+    "password": password,
     //"fecha_nac": fechaNac.toIso8601String(),
   };
 }
