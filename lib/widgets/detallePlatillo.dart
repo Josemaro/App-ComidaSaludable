@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:instructivoflut4/models/PlatilloModel.dart';
 
@@ -13,7 +14,7 @@ class DetallePlatillo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.redAccent,
+        backgroundColor: Colors.amberAccent,
         body: DefaultTabController(
           length: 2,
           child: NestedScrollView(
@@ -46,9 +47,10 @@ class DetallePlatillo extends StatelessWidget {
                         tabs: [
                           new Tab(icon: new Icon(Icons.info), text: "Tab 1"),
                           new Tab(
-                            //icon: new Icon(Icons.lightbulb_outline),
+                              //icon: new Icon(Icons.lightbulb_outline),
                               icon: new Icon(Icons.fastfood),
-                              text: "Tab 2"),
+                              text: "Tab 2"
+                          ),
                         ],
                       ),
                     ]),
@@ -60,25 +62,116 @@ class DetallePlatillo extends StatelessWidget {
               padding: EdgeInsets.only(top:10,left: 30,right: 30),
               child:ListView(
                 children: [
-                  Text(platillo.nombre,style: TextStyle(fontSize: 20),),
+                  Text(platillo.nombre,style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold),),
                   Container(
                     padding: EdgeInsets.only(left: 20,top: 10),
-                    child: Text(platillo.calorias+' '+platillo.colesterol),
+                    child: Container(
+                      height: 35,
+                      color: Colors.white30,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+
+                            Column(
+
+                              children: [
+                                Text('Calorias',style: TextStyle(fontWeight: FontWeight.bold),),
+                                Text(platillo.calorias),
+                              ],
+                            ),
+                            SizedBox(width: 10,),
+                            Column(
+                              children: [
+                                Text('Carbohidratos',style: TextStyle(fontWeight: FontWeight.bold),),
+                                Text(platillo.carbohidratos),
+                              ],
+                            ),
+                            SizedBox(width: 10,),
+                            Column(
+                              children: [
+                                Text('Fibra D',style: TextStyle(fontWeight: FontWeight.bold),),
+                                Text(platillo.fibraD),
+                              ],
+                            ),
+                            SizedBox(width: 10,),
+                            Column(
+                              children: [
+                                Text('Proteinas',style: TextStyle(fontWeight: FontWeight.bold),),
+                                Text(platillo.proteinas),
+                              ],
+                            ),
+                          ],
+                      ),
+                    ),
                   ),
-                  Text('\nTiempo de Preparación',style: TextStyle(fontSize: 20),),
                   Container(
                     padding: EdgeInsets.only(left: 20,top: 10),
-                    child: Text(platillo.tiempoP+' minutos'),
+                    child: Container(
+                      height: 35,
+                      color: Colors.white30,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+
+                          Column(
+
+                            children: [
+                              Text('GrasaTotal',style: TextStyle(fontWeight: FontWeight.bold),),
+                              Text(platillo.grasaTotal),
+                            ],
+                          ),
+                          SizedBox(width: 10,),
+                          Column(
+                            children: [
+                              Text('GrasaSaturada',style: TextStyle(fontWeight: FontWeight.bold),),
+                              Text(platillo.grasaSaturada),
+                            ],
+                          ),
+                          SizedBox(width: 10,),
+                          Column(
+                            children: [
+                              Text('GrasaTrans',style: TextStyle(fontWeight: FontWeight.bold),),
+                              Text(platillo.grasaTrans),
+                            ],
+                          ),
+
+                          SizedBox(width: 10,),
+                          Column(
+                            children: [
+                              Text('Colesterol',style: TextStyle(fontWeight: FontWeight.bold),),
+                              Text(platillo.colesterol),
+                            ],
+                          ),
+                          SizedBox(width: 10,),
+                          Column(
+                            children: [
+                              Text('Sodio',style: TextStyle(fontWeight: FontWeight.bold),),
+                              Text(platillo.sodio),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
                   ),
-                  Text('\nIngredientes',style: TextStyle(fontSize: 20),),
+                  Text('\nTiempo de Preparación',style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold),),
+                  SizedBox(height: 10,),
+                  Container(
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(platillo.tiempoP+' minutos',style: TextStyle(fontSize: 25)),
+                        Icon(Icons.timer)
+                      ],
+                    ) ,
+                  ),
+                  Text('\nIngredientes',style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
                   Container(
                       padding: EdgeInsets.only(left: 20,top: 10),
                       child: Column(
                         children: [
-                          Text(platillo.ingredientes)
+                          Text(platillo.ingredientes,style: TextStyle(fontSize: 15))
                         ],)
                   ),
-                  Text('\nValor Nutricional:',style: TextStyle(fontSize: 20),),
                 ],
               ),
 
