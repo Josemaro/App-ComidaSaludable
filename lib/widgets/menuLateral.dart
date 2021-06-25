@@ -29,8 +29,8 @@ class _MenuLateralState extends State<MenuLateral> {
         child: ListView(
           children: <Widget>[
             new UserAccountsDrawerHeader(
-              accountName: Text("Jose Wong",style: TextStyle(color: Colors.white,fontSize: 25)),
-              accountEmail: Text("Tengo Hambre ...",style: TextStyle(color: Colors.white70),),
+              accountName: Text("Curso Vijap",style: TextStyle(color: Colors.white,fontSize: 25)),
+              accountEmail: Text("Universidad Privada del Norte",style: TextStyle(color: Colors.white70),),
               decoration: BoxDecoration(
                   image: DecorationImage(
                       image: NetworkImage('https://i.ibb.co/r4d3zB8/Keto-diet-concept-salmon-avocado-eggs-nuts-and-seeds-bright-green-background-top-view.jpg'),
@@ -62,7 +62,7 @@ class _MenuLateralState extends State<MenuLateral> {
             ),
             Divider(),
             new ListTile(
-              title: Text("NuevoMenu", style: TextStyle(color: Colors.white)),
+              title: Text("Usuarios", style: TextStyle(color: Colors.white)),
               onTap: (){
                 Navigator.push(
                   context,
