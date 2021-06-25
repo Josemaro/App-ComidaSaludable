@@ -68,8 +68,20 @@ class Platillo_Page extends StatelessWidget {
         child: Column(
           children: <Widget>[
             ListTile(
-              title: Text('${ platillo.nombre }'),
-              subtitle: Text(platillo.calorias),
+              title: Text('${ platillo.nombre }',style: TextStyle(fontSize: 17,fontWeight: FontWeight.bold),),
+              subtitle: Text('Calorías: '+platillo.calorias),
+              trailing: Icon(Icons.keyboard_arrow_right, color: Colors.black),
+              leading: Container(
+                width: 100,
+                height: 150,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(50),
+                  image: DecorationImage(
+                      fit: BoxFit.cover,image: new NetworkImage(platillo.img)
+                  ),
+                ),
+                //child: Image.asset(x['imagen'],fit: BoxFit.cover,),
+              ),
               onTap: () {
                 Navigator.push(
                   context,
