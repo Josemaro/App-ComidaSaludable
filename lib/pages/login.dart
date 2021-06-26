@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:instructivoflut4/Dto/JsonDto.dart';
+import 'package:instructivoflut4/Dto/LoginDto.dart';
 import 'package:instructivoflut4/bloc/provider.dart';
+import 'package:instructivoflut4/providers/LoginProvider.dart';
 
 import '../bloc/login_bloc.dart';
 import 'mprincipal.dart';
 
+final loginProvider = new LoginProvider();
 
 class Login_Page extends StatelessWidget{
   @override
@@ -96,6 +100,12 @@ class Login_Page extends StatelessWidget{
 _login(Login_Bloc bloc, BuildContext context){
   print(bloc.correo);
   print(bloc.clave);
+  LoginDto loginDto = new LoginDto();
+  loginDto.email=bloc.correo;
+  loginDto.password=bloc.clave;
+  //loginProvider.loginUsuario(loginDto);
+  loginProvider.loginUsuario(loginDto);
+
   Navigator.push(context,
     //MaterialPageRoute(builder: (context) => FirstRoute()),
     MaterialPageRoute(builder: (context) => MPrincipal()),
@@ -195,4 +205,6 @@ _login(Login_Bloc bloc, BuildContext context){
         )
       ],
     );
+
+
   }

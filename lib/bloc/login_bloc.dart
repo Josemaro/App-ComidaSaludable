@@ -5,6 +5,7 @@ import 'package:rxdart/rxdart.dart';
 class Login_Bloc with Validar{
   final _emailController = BehaviorSubject<String>();
   final _claveController = BehaviorSubject<String>();
+  final _token = BehaviorSubject<String>();
 
   Stream<String> get emailStream => _emailController.stream.transform(validarEmail);
   Stream<String> get claveStream => _claveController.stream.transform(validarClave);
